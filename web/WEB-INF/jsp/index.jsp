@@ -52,22 +52,29 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 text-center">
                     
-                <form>
+                <form id="init-form">
+                    <div class="form-group hide name-input">
+                      <label for="InputName">Nombre</label>
+                      <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="Ingresa tu nombre">
+                    </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
+                      <label for="InputEmail1">Email</label>
+                      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
                       <small id="emailHelp" class="form-text text-muted">Si no tienes cuenta registrate</small>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Clave">
+                      <label for="InputPassword1">Password</label>
+                      <input type="password" class="form-control" id="InputPassword1" placeholder="Clave">
                     </div>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
                   </form>
+                  <br/>
+                <button class="btn btn-primary btn-register">Registrarse</button>
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/main.js"></script>
     </body>
 </html>

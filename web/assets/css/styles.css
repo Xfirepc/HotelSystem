@@ -229,3 +229,7 @@ body {
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
+
+.hide{
+    display: none;
+}
