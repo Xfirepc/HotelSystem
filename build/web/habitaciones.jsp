@@ -15,15 +15,11 @@
         <%
             Habitacion habitaciones = new Habitacion();
             ResultSet rs = habitaciones.getOne("123");
-            while (rs.next()) {
+   
+            Object[] data = {"rsxs", 44, 10, "obsevada"};
         %>
-        <hr>
-           <%=rs.getString("cod_habitacion")%>
-           <%=rs.getInt("numero")%>
-           <%=rs.getInt("piso")%>
-           <%=rs.getString("observaciones")%>
-        <%
-            }
-        %>
+         <%=habitaciones.create(data)%>
+         <hr>
+         <%="INSERT INTO habitaciones (cod_habitacion,numero,piso,observaciones) VALUES (?,?,?,?)"%>
     </body>
 </html>

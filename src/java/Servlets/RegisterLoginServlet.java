@@ -28,7 +28,7 @@ public class RegisterLoginServlet extends HttpServlet {
         String pass = request.getParameter("pass");
         
         Habitacion handler = new Habitacion();
-        if(handler.createHabitation("123z", 23, 34, "Ocupada")){
+        if(handler.createHabitation("xxx", 11, 11, "Nose")){
             response.sendRedirect("index.jsp");
         }
     }
