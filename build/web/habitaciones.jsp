@@ -1,7 +1,7 @@
 
 
 <%@page import="java.sql.ResultSet"%>
-<%@page import="Controller.HandlerRequest"%>
+<%@page import="Model.Habitacion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,8 +13,8 @@
         <h1>Hello World!</h1>
         
         <%
-            HandlerRequest usu = new HandlerRequest();
-            ResultSet rs = usu.Listar();
+            Habitacion habitaciones = new Habitacion();
+            ResultSet rs = habitaciones.getOne("123");
             while (rs.next()) {
         %>
         <hr>

@@ -4,6 +4,7 @@ package Model;
 import HotelSystem.Conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MainModel {
@@ -19,7 +20,7 @@ public class MainModel {
             Statement st = cn.getConexion().createStatement();
             rs = st.executeQuery(sql);
             cn.getConexion().close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.print(e);
         }
         return rs;
@@ -29,27 +30,27 @@ public class MainModel {
         ResultSet rs = null;
         try {
             Conexion cn = new Conexion();
-            String sql = "SELECT * FROM " + this.table  + " WHERE " + this.getMainField() + " = " + val;;
+            String sql = "SELECT * FROM " + this.table  + " WHERE " + this.getMainField() + " = '" + val + "'";
             Statement st = cn.getConexion().createStatement();
             rs = st.executeQuery(sql);
             cn.getConexion().close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.print(e);
         }
         return rs;
-    }
      
+    }
     public boolean delete(String val) {
-
         try {
             PreparedStatement pst = null;
             Conexion cn = new Conexion();
-            String sql = "DELETE FROM " + this.table + " WHERE " + this.getMainField() + " = " + val;
+            String sql = "DELETE FROM " + this.table + " WHERE " + this.getMainField() + " = '" + val + "'";
             pst = cn.getConexion().prepareStatement(sql);
             if (pst.executeUpdate() == 1) {
                 return true;
             }
-        } catch (Exception e) {
+            cn.getConexion().close();
+        } catch (SQLException e) {
             System.out.print(e);
         }
         return false;

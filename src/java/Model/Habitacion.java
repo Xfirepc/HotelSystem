@@ -2,9 +2,6 @@ package Model;
 
 import HotelSystem.Conexion;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
 
 public class Habitacion extends MainModel {
     
@@ -13,21 +10,12 @@ public class Habitacion extends MainModel {
     public int piso;
     public String observaciones;
     
-    public String table = "habitaciones";
-   
-    public ResultSet listar() {
-        ResultSet rs = null;
-        try {
-            Conexion cn = new Conexion();
-            String sql = "select * from habitaciones";
-            Statement st = cn.getConexion().createStatement();
-            rs = st.executeQuery(sql);
-            cn.getConexion().close();
-        } catch (Exception e) {
-            System.out.print(e);
-        }
-        return rs;
-    }
+    public Habitacion(){
+        super();
+        super.table = "habitaciones";
+        super.fields = "cod_habitacion,numero,piso,observaciones";
+    }    
+    
     public boolean createHabitation(String cod, int number, int floor, String observations) {
         try {
             PreparedStatement pst = null;

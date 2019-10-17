@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.ResultSet;
-import Controller.HandlerRequest;
+import Model.Habitacion;
 
 public final class habitaciones_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -59,8 +59,8 @@ public final class habitaciones_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        \n");
       out.write("        ");
 
-            HandlerRequest usu = new HandlerRequest();
-            ResultSet rs = usu.Listar();
+            Habitacion habitaciones = new Habitacion();
+            ResultSet rs = habitaciones.getOne("123");
             while (rs.next()) {
         
       out.write("\n");
