@@ -52,7 +52,7 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 text-center">
                     
-                <form id="init-form">
+                <form id="init-form" action="initForm" method="POST">
                     <div class="form-group hide name-input">
                       <label for="InputName">Nombre</label>
                       <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="Ingresa tu nombre">
