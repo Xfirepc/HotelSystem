@@ -52,19 +52,19 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 text-center">
                     
-                <form id="init-form" action="initForm" method="POST">
+                <form id="init-form" action="InitHandler" method="POST">
                     <div class="form-group hide name-input">
                       <label for="InputName">Nombre</label>
-                      <input type="text" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="Ingresa tu nombre">
+                      <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="emailHelp" placeholder="Ingresa tu nombre">
                     </div>
                     <div class="form-group">
                       <label for="InputEmail1">Email</label>
-                      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
+                      <input type="email" class="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="Ingresar email">
                       <small id="emailHelp" class="form-text text-muted">Si no tienes cuenta registrate</small>
                     </div>
                     <div class="form-group">
                       <label for="InputPassword1">Password</label>
-                      <input type="password" class="form-control" id="InputPassword1" placeholder="Clave">
+                      <input type="password" class="form-control" id="InputPassword1" name="pass" placeholder="Clave">
                     </div>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                   </form>
