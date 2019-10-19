@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/InitHandler"})
+@WebServlet(urlPatterns = {"/register"})
 public class RegisterServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +24,7 @@ public class RegisterServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         String email = request.getParameter("email");
-        String name = request.getParameter("nombre");
+        String name = request.getParameter("name");
         String pass = request.getParameter("pass");
         
         Habitacion handler = new Habitacion();

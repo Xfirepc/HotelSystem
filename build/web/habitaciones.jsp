@@ -1,7 +1,7 @@
 
 
 <%@page import="java.sql.ResultSet"%>
-<%@page import="Model.User"%>
+<%@page import="Model.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="layout/head.jsp" %>
 <%@include file="layout/header.jsp" %>
@@ -30,15 +30,19 @@
                             <h3 class="box-title">Blank Page</h3
                             
                             <% 
-                                User user = new User();
-                                user.name = "Jose Flores";
-                                user.email = "xfire";
-                                user.pass = "12345";
-                                user.create();
+                                Cliente client = new Cliente();
+                                client.cedula = 1213412;
+                                client.nombres = "Jose";
+                                client.apellidos = "Flores";
+                                client.direccion = "Quito";
+                                client.telefono = 987522;
+                                client.email = "example@example.com";
+                                client.observaciones = "Esta debiendo";
+                                
                             %>
                             
                         </div>
-
+                        <%= client.create() %>
                     </div>
                 </div>
             </div>

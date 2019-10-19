@@ -87,7 +87,7 @@ public class MainModel {
             if (pst.executeUpdate() == 1) {
                 return true;
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.print(e);
         }
         return false;
