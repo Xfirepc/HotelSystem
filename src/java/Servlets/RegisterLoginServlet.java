@@ -28,9 +28,7 @@ public class RegisterLoginServlet extends HttpServlet {
         String pass = request.getParameter("pass");
         
         Habitacion handler = new Habitacion();
-        if(handler.createHabitation("xxx", 11, 11, "Nose")){
-            response.sendRedirect("index.jsp");
-        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

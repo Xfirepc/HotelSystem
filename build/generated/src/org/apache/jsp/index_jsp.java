@@ -95,7 +95,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"col-sm-4\"></div>\n");
       out.write("                <div class=\"col-sm-4 text-center\">\n");
       out.write("                    \n");
-      out.write("                <form id=\"init-form\" action=\"RegisterLoginServlet\" method=\"POST\">\n");
+      out.write("                <form id=\"init-form\" action=\"InitHandler\" method=\"POST\">\n");
       out.write("                    <div class=\"form-group hide name-input\">\n");
       out.write("                      <label for=\"InputName\">Nombre</label>\n");
       out.write("                      <input type=\"text\" class=\"form-control\" id=\"InputName\" name=\"nombre\" aria-describedby=\"emailHelp\" placeholder=\"Ingresa tu nombre\">\n");
