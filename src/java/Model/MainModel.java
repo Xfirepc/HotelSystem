@@ -56,8 +56,13 @@ public class MainModel {
         return false;
     }
     
-    public boolean insert(Object[] data, String[] type, String remove){
-        Object [] fields = this.fields.split(",");
+    public boolean insert(Object[] data, String[] type, boolean remove){
+        Object [] fields = null;
+        if (remove){
+           fields = (this.fields.replace(this.getMainField()+",", "")).split(",");
+        }else{
+           fields = this.fields.split(",");
+        }
         String sql = "INSERT INTO " + this.table + " (";
         
         for(int i = 0; i < fields.length; i++)
@@ -68,6 +73,7 @@ public class MainModel {
             sql += "?,";
         
         sql = sql.substring(0, sql.length() - 1)  + ")";
+//        return sql;
         try {
             PreparedStatement pst = null;
             Conexion cn = new Conexion();

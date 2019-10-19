@@ -10,8 +10,10 @@ $('.btn-register').click(() => {
     if(formControl.hasClass('hide')){
         showElement(formControl)
     }else{
-        if (formControl.children('input').val() != '')
+        if (formControl.children('input').val() != ''){
+            $('#init-form').attr('action', 'register')
             $('#init-form').submit()
+        }
         else
             alert('Ingresa tu nombre')
     }

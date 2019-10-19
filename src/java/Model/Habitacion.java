@@ -1,17 +1,13 @@
 package Model;
 
-import HotelSystem.Conexion;
-import java.sql.PreparedStatement;
-
 public class Habitacion extends MainModel {
     
     public String cod_habitacion;
     public int numero;
     public int piso;
-    
     public String observaciones;
     
-    public Habitacion(){
+    public Habitacion() {
         super();
         super.table = "habitaciones";
         super.fields = "cod_habitacion,numero,piso,observaciones";
@@ -26,6 +22,6 @@ public class Habitacion extends MainModel {
             this.piso, 
             this.observaciones
         };
-        return super.insert(data, types, null);
+        return super.insert(data, types, false);
     }
 }

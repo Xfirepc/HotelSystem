@@ -52,10 +52,10 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 text-center">
                     
-                <form id="init-form" action="register" method="POST">
+                <form id="init-form" action="login" method="POST">
                     <div class="form-group hide name-input">
                       <label for="InputName">Nombre</label>
-                      <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="emailHelp" placeholder="Usuario">
+                      <input type="text" class="form-control" id="InputName" name="name" aria-describedby="emailHelp" placeholder="Usuario">
                     </div>
                     <div class="form-group">
                       <label for="InputEmail1">Email</label>

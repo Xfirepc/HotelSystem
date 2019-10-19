@@ -13,5 +13,5 @@
     <link href="assets/admin/css/animate.css" rel="stylesheet">
     <link href="assets/admin/css/style.css" rel="stylesheet">
     <link href="assets/admin/css/colors/default.css" id="theme" rel="stylesheet">
-
+    <<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
