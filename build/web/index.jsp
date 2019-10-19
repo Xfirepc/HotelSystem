@@ -55,21 +55,22 @@
                 <form id="init-form" action="InitHandler" method="POST">
                     <div class="form-group hide name-input">
                       <label for="InputName">Nombre</label>
-                      <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="emailHelp" placeholder="Ingresa tu nombre">
+                      <input type="text" class="form-control" id="InputName" name="nombre" aria-describedby="emailHelp" placeholder="Usuario">
                     </div>
                     <div class="form-group">
                       <label for="InputEmail1">Email</label>
-                      <input type="email" class="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="Ingresar email">
-                      <small id="emailHelp" class="form-text text-muted">Si no tienes cuenta registrate</small>
+                      <input type="email" class="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="example@info.com">
                     </div>
                     <div class="form-group">
                       <label for="InputPassword1">Password</label>
-                      <input type="password" class="form-control" id="InputPassword1" name="pass" placeholder="Clave">
+                      <input type="password" class="form-control" id="InputPassword1" name="pass" placeholder="******">
+                      <small id="emailHelp" class="form-text text-muted">Si no tienes cuenta registrate</small>
                     </div>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
+                    <a class="btn btn-primary btn-register text-white">Registrarse</a>
                   </form>
                   <br/>
-                <button class="btn btn-primary btn-register">Registrarse</button>
+               
                 </div>
             </div>
         </div>
