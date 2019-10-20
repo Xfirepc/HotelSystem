@@ -1,12 +1,15 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="Model.User"%>
 <%
+    ResultSet user = null;
     HttpSession getSession = (HttpSession) request.getSession();
     if(getSession.getAttribute("user") == null){
-        response.sendRedirect("index.jsp");
+    %>
+        <script>window.location = "index.jsp"</script>
+    <%
+    }else{
+        user = (ResultSet) getSession.getAttribute("user");
     }
-    ResultSet user = (ResultSet) getSession.getAttribute("user");
-    
 %>
 <body class="fix-header">
  
@@ -48,7 +51,7 @@
                     </li>
                     <li>
                         <a class="profile-pic" href="#"> <img src="https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png" alt="user-img"
-                                width="36" class="img-circle"><b class="hidden-xs">Hola, <%=user.getString("name")%></b></a>
+                                width="36" class="img-circle"><b class="hidden-xs">Hola, <%=user != null ? user.getString("name"): ""%></b></a>
                     </li>
                 </ul>
             </div>
