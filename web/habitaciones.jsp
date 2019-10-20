@@ -33,43 +33,43 @@
                                             <div class="form-group row">
                                                 <label class="col-md-4">Código</label>
                                                 <div class="col-md-8">
-                                                    <input type="text" class="form-control form-control-line"> 
+                                                    <input type="text" class="form-control form-control-line" name="codigo"> 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-md-4">Nombre</label>
                                                 <div class="col-md-8">
-                                                    <input type="text" class="form-control form-control-line"> 
+                                                    <input type="text" class="form-control form-control-line" name="nombre"> 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-md-4">Piso</label>
                                                 <div class="col-md-8">
-                                                    <input type="number" class="form-control form-control-line"> 
+                                                    <input type="number" class="form-control form-control-line" name="piso"> 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-md-4">Precio</label>
                                                 <div class="col-md-8">
-                                                    <input type="number" class="form-control form-control-line"> 
+                                                    <input type="text" class="form-control form-control-line" name="precio"> 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-md-4">Imagen</label>
                                                 <div class="col-md-8">
-                                                    <input type="text" class="form-control form-control-line"> 
+                                                    <input type="text" class="form-control form-control-line" name="imagen"> 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-md-4">Descripción</label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control form-control-line"></textarea>
+                                                    <textarea class="form-control form-control-line" name="descripcion"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-md-4">Observaciónes</label>
                                                 <div class="col-md-8">
-                                                    <textarea class="form-control form-control-line"></textarea>
+                                                    <textarea class="form-control form-control-line" name="observaciones"></textarea>
                                                 </div>
                                             </div>
                                            
