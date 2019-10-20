@@ -55,7 +55,7 @@
                 <%
                     String msg = request.getParameter("msg");
                     String showMsg = null;
-                    if(msg != "") {
+                    if(msg != null) {
                         Utils utl = new Utils();
                         showMsg = utl.decode64(msg);
                     %>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group">
                       <label for="InputEmail1">Email</label>
-                      <input type="email" class="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="example@info.com">
+                      <input type="text" class="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="example@info.com">
                     </div>
                     <div class="form-group">
                       <label for="InputPassword1">Password</label>

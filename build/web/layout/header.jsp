@@ -1,3 +1,9 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Model.User"%>
+<%
+    HttpSession getSession = (HttpSession) request.getSession();
+    ResultSet user = (ResultSet) getSession.getAttribute("user");
+%>
 <body class="fix-header">
  
     <!-- ============================================================== -->
@@ -38,7 +44,7 @@
                     </li>
                     <li>
                         <a class="profile-pic" href="#"> <img src="https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png" alt="user-img"
-                                width="36" class="img-circle"><b class="hidden-xs">Steave</b></a>
+                                width="36" class="img-circle"><b class="hidden-xs">Hola, <%=user.getString("name")%></b></a>
                     </li>
                 </ul>
             </div>

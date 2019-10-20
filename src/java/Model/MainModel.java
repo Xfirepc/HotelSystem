@@ -93,6 +93,19 @@ public class MainModel {
         return false;
     }
     
+    public ResultSet execute(String sql){
+         ResultSet rs = null;
+        try {
+            Conexion cn = new Conexion();
+            Statement st = cn.getConexion().createStatement();
+            rs = st.executeQuery(sql);
+            cn.getConexion().close();
+        } catch (SQLException e) {
+            System.out.print(e);
+        }
+        return rs;
+    }
+    
      public String getMainField() {
         return (this.fields.split(","))[0];
     }
