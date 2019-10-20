@@ -1,3 +1,4 @@
+<%@page import="Utils.Utils"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -51,7 +52,20 @@
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 text-center">
-                    
+                <%
+                    String msg = request.getParameter("msg");
+                    String showMsg = null;
+                    if(msg != "") {
+                        Utils utl = new Utils();
+                        showMsg = utl.decode64(msg);
+                    %>
+                    <div class="alert alert-dismissible alert-info">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong><%= showMsg %></strong>
+                      </div>
+                    <%
+                    }
+                %>   
                 <form id="init-form" action="Login" method="POST">
                     <div class="form-group hide name-input">
                       <label for="InputName">Nombre</label>

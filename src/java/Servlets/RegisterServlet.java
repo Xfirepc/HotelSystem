@@ -9,13 +9,12 @@ package Servlets;
 import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Utils.Utils;
 
 @WebServlet(urlPatterns = {"/Register"})
 public class RegisterServlet extends HttpServlet {
@@ -28,38 +27,21 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
-        
+        Utils utl = new Utils();
         User user = new User();
         user.email = email;
-        user.pass = this.encryptPass(pass);
+        user.pass = utl.encryptPass(pass);
         user.name = name;
         
         if(user.create()){
-            response.sendRedirect("habitaciones.jsp");
+            
+            String msg = "Se ha registrado correctamente.";
+            response.sendRedirect("index.jsp?msg=" + utl.encode64(msg));
         }else
             response.sendError(400, "Ocurrio un problema al registrarse.");
 
     }
-    public String encryptPass(String pass) {
-        String passwordToHash = pass;
-        String generatedPassword = null;
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(passwordToHash.getBytes());
-            byte[] bytes = md.digest();
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++)
-            {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            generatedPassword = sb.toString();
-        }
-        catch (NoSuchAlgorithmException e)
-        {
-            e.printStackTrace();
-        }
-        return generatedPassword;
-    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
