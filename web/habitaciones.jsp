@@ -17,33 +17,73 @@
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
-                            class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newHab">Nueva Habitacion</a>
+                            class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newHab">Nueva Habitación</a>
+                            <div class="modal fade" id="newHab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Nueva habitación</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <form class="form-horizontal form-material" action="NewRoom">
+                                    <div class="modal-body">
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-md-4">Código</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control form-control-line"> 
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4">Nombre</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control form-control-line"> 
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4">Piso</label>
+                                                <div class="col-md-8">
+                                                    <input type="number" class="form-control form-control-line"> 
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4">Precio</label>
+                                                <div class="col-md-8">
+                                                    <input type="number" class="form-control form-control-line"> 
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4">Imagen</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control form-control-line"> 
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4">Descripción</label>
+                                                <div class="col-md-8">
+                                                    <textarea class="form-control form-control-line"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-4">Observaciónes</label>
+                                                <div class="col-md-8">
+                                                    <textarea class="form-control form-control-line"></textarea>
+                                                </div>
+                                            </div>
+                                           
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                      <a class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+                                      <button type="submit" class="btn btn-primary">Crear</button>
+                                    </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
                     </div>
-                    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
                 </div>
                 <div class="row">
                     
