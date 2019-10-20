@@ -13,6 +13,7 @@ public class Habitacion extends MainModel {
     public Habitacion() {
         super();
         super.table = "habitaciones";
+        super.type = "string";
         super.fields = "cod_habitacion,nombre,descripcion,precio,piso,imagen,observaciones";
     }    
     

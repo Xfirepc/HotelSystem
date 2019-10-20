@@ -11,6 +11,7 @@ public class MainModel {
     
     public String table;
     public String fields;
+    public String type;
     
     public ResultSet get() {
         ResultSet rs = null;
@@ -21,7 +22,9 @@ public class MainModel {
             rs = st.executeQuery(sql);
             cn.getConexion().close();
         } catch (SQLException e) {
-            System.out.print(e);
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return rs;
     }
@@ -35,23 +38,33 @@ public class MainModel {
             rs = st.executeQuery(sql);
             cn.getConexion().close();
         } catch (SQLException e) {
-            System.out.print(e);
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return rs;
      
     }
-    public boolean delete(String val) {
+    public boolean delete(Object val) {
         try {
             PreparedStatement pst = null;
             Conexion cn = new Conexion();
-            String sql = "DELETE FROM " + this.table + " WHERE " + this.getMainField() + " = '" + val + "'";
+            String sql = "DELETE FROM " + this.table + " WHERE " + this.getMainField() + "=?";
             pst = cn.getConexion().prepareStatement(sql);
+            if(this.type == "integer"){
+                pst.setString(1, (String) val);
+            }else{
+                pst.setInt(1, (int) val);
+            }
+           
             if (pst.executeUpdate() == 1) {
                 return true;
             }
             cn.getConexion().close();
         } catch (SQLException e) {
-            System.out.print(e);
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return false;
     }
@@ -90,7 +103,9 @@ public class MainModel {
                 return true;
             }
         } catch (SQLException e) {
-            System.out.print(e);
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return false;
     }
@@ -103,7 +118,9 @@ public class MainModel {
             rs = st.executeQuery(sql);
             cn.getConexion().close();
         } catch (SQLException e) {
-            System.out.print(e);
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return rs;
     }

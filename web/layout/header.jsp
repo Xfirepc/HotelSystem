@@ -71,23 +71,23 @@
                 </div>
                 <ul class="nav" id="side-menu">
                     <li style="padding: 70px 0 0;">
-                        <a href="dashboard.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                        <a href="habitaciones.jsp" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i>Habitaciones</a>
                     </li>
                     <li>
-                        <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw"
+                        <a href="reservaciones.jsp" class="waves-effect"><i class="fa fa-user fa-fw"
                                 aria-hidden="true"></i>Reservaciones</a>
                     </li>
                     <li>
-                        <a href="basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw"
+                        <a href="clientes.jsp" class="waves-effect"><i class="fa fa-table fa-fw"
                                 aria-hidden="true"></i>Clientes</a>
                     </li>
                     <li>
-                        <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw"
+                        <a href="inventario.jsp" class="waves-effect"><i class="fa fa-font fa-fw"
                                 aria-hidden="true"></i>Inventario</a>
                     </li>
                     <li>
-                        <a href="map-google.html" class="waves-effect"><i class="fa fa-globe fa-fw"
+                        <a href="usuarios.jsp" class="waves-effect"><i class="fa fa-globe fa-fw"
                                 aria-hidden="true"></i>Usuarios</a>
                     </li>
                 </ul>

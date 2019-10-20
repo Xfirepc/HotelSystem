@@ -14,6 +14,7 @@ public class Cliente extends MainModel{
     public Cliente() {
         super();
         super.table = "clientes";
+        super.type = "integer";
         super.fields = "cedula,nombres,apellidos,direccion,telefono,email,observaciones";
     }    
     

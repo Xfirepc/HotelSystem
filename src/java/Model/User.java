@@ -12,6 +12,7 @@ public class User extends MainModel{
     public User() {
         super();
         super.table = "usuarios";
+        super.type = "integer";
         super.fields = "id,name,email,password";
     }
     
