@@ -37,7 +37,7 @@
                                     class="fa fa-search"></i></a> </form>
                     </li>
                     <li>
-                        <a class="profile-pic" href="#"> <img src="assets/admin/images/users/varun.jpg" alt="user-img"
+                        <a class="profile-pic" href="#"> <img src="https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png" alt="user-img"
                                 width="36" class="img-circle"><b class="hidden-xs">Steave</b></a>
                     </li>
                 </ul>
@@ -59,36 +59,28 @@
                 <ul class="nav" id="side-menu">
                     <li style="padding: 70px 0 0;">
                         <a href="dashboard.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
-                                aria-hidden="true"></i>Dashboard</a>
+                                aria-hidden="true"></i>Habitaciones</a>
                     </li>
                     <li>
                         <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw"
-                                aria-hidden="true"></i>Profile</a>
+                                aria-hidden="true"></i>Reservaciones</a>
                     </li>
                     <li>
                         <a href="basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw"
-                                aria-hidden="true"></i>Basic Table</a>
+                                aria-hidden="true"></i>Clientes</a>
                     </li>
                     <li>
                         <a href="fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw"
-                                aria-hidden="true"></i>Icons</a>
+                                aria-hidden="true"></i>Inventario</a>
                     </li>
                     <li>
                         <a href="map-google.html" class="waves-effect"><i class="fa fa-globe fa-fw"
-                                aria-hidden="true"></i>Google Map</a>
-                    </li>
-                    <li>
-                        <a href="blank.html" class="waves-effect"><i class="fa fa-columns fa-fw"
-                                aria-hidden="true"></i>Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="404.html" class="waves-effect"><i class="fa fa-info-circle fa-fw"
-                                aria-hidden="true"></i>Error 404</a>
+                                aria-hidden="true"></i>Usuarios</a>
                     </li>
                 </ul>
                 <div class="center p-20">
-                    <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
-                        class="btn btn-danger btn-block waves-effect waves-light">Upgrade to Pro</a>
+                    <a href="/Logout" target="_blank"
+                        class="btn btn-danger btn-block waves-effect waves-light">Salir</a>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ $('.btn-register').click(() => {
         showElement(formControl)
     }else{
         if (formControl.children('input').val() != ''){
-            $('#init-form').attr('action', 'register')
+            $('#init-form').attr('action', 'Register')
             $('#init-form').submit()
         }
         else

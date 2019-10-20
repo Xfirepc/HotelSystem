@@ -6,16 +6,18 @@ package Servlets;
  * and open the template in the editor.
  */
 
-import Model.Habitacion;
+import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/register"})
+@WebServlet(urlPatterns = {"/Register"})
 public class RegisterServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -27,10 +29,37 @@ public class RegisterServlet extends HttpServlet {
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
         
-        Habitacion handler = new Habitacion();
+        User user = new User();
+        user.email = email;
+        user.pass = this.encryptPass(pass);
+        user.name = name;
+        
+        if(user.create()){
+            response.sendRedirect("habitaciones.jsp");
+        }else
+            response.sendError(400, "Ocurrio un problema al registrarse.");
 
     }
-
+    public String encryptPass(String pass) {
+        String passwordToHash = pass;
+        String generatedPassword = null;
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(passwordToHash.getBytes());
+            byte[] bytes = md.digest();
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            generatedPassword = sb.toString();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+        return generatedPassword;
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
