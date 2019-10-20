@@ -92,7 +92,7 @@
                     </li>
                 </ul>
                 <div class="center p-20">
-                    <a href="/Logout" target="_blank"
+                    <a href="Logout"
                         class="btn btn-danger btn-block waves-effect waves-light">Salir</a>
                 </div>
             </div>
