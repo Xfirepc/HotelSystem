@@ -102,16 +102,16 @@
                         ResultSet client = cli.get();
                         while(client.next()){
                     %>
-                        <tr>
-                            <td><%=client.getInt(1)%></td>
-                            <td><%=client.getString(2)%></td>
-                            <td><%=client.getString(3)%></td>
-                            <td><%=client.getString(4)%></td>
-                            <td><%=client.getInt(5)%></td>
-                            <td><%=client.getString(6)%></td>
-                            <td><%=client.getString(7)%></td>
+                        <tr id="client-<%=client.getInt(1)%>">
+                            <td field="cedula"><%=client.getInt(1)%></td>
+                            <td field="nombres"><%=client.getString(2)%></td>
+                            <td field="apellidos"><%=client.getString(3)%></td>
+                            <td field="direccion"><%=client.getString(4)%></td>
+                            <td field="telefono"><%=client.getInt(5)%></td>
+                            <td field="email"><%=client.getString(6)%></td>
+                            <td field="observaciones"><%=client.getString(7)%></td>
                             <td class="text-center">
-                                <button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
+                                <button class="btn btn-info btn-sm edit-client" data="#client-<%=client.getInt(1)%>"><i class="fa fa-eye"></i></button>
                                 <a href="DeleteClient?id=<%=client.getInt(1)%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>

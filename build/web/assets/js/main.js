@@ -23,3 +23,20 @@ function showElement(el) {
     el.removeClass('hide')
     el.show()
 }
+
+
+$('.edit-client').click(() => {
+    let valID = $('.edit-client');
+    let values = $(valID.attr("data") + ' td')
+    let tr = $(valID.attr("data"))
+    console.log(values)
+    let str = `<tr>`
+    for(let i = 0; i < values.length - 1; i++){
+        let td = $(values[i])
+        str += `<td><input class="form-control form-control-line" value="${td.html()}" name="${td.attr("field")}"/></td>`
+    }
+    str += `<td><button class="btn btn-success btn-sm update-client"><i class="fa fa-check"></i></button></td>`
+    str += `</tr>`
+    tr.after(str)
+    tr.hide()
+})
