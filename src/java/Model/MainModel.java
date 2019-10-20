@@ -83,6 +83,8 @@ public class MainModel {
                     pst.setInt(i + 1, (int) data[i]);
                 else if(type[i] == "s")
                     pst.setString(i + 1, (String) data[i]);
+                else if(type[i] == "d")
+                    pst.setDouble(i + 1, (double) data[i]);
             }
             if (pst.executeUpdate() == 1) {
                 return true;

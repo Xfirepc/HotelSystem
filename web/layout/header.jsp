@@ -2,7 +2,11 @@
 <%@page import="Model.User"%>
 <%
     HttpSession getSession = (HttpSession) request.getSession();
+    
     ResultSet user = (ResultSet) getSession.getAttribute("user");
+    if(!user.first()){
+        response.sendRedirect("index.jsp");
+    }
 %>
 <body class="fix-header">
  

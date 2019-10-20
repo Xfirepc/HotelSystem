@@ -3,23 +3,29 @@ package Model;
 public class Habitacion extends MainModel {
     
     public String cod_habitacion;
-    public int numero;
-    public int piso;
+    public String nombre;
+    public String descripcion;
+    public String imagen;
     public String observaciones;
+    public double precio;
+    public int piso;
     
     public Habitacion() {
         super();
         super.table = "habitaciones";
-        super.fields = "cod_habitacion,numero,piso,observaciones";
+        super.fields = "cod_habitacion,nombre,descripcion,precio,piso,imagen,observaciones";
     }    
     
     public boolean create() {
-        // Types are defined by s: String, i: int, d: Date
-        String[] types = {"s", "i", "i", "s"};
+        // Types are defined by s: String, i: int, D: Date, d: Double
+        String[] types = {"s", "s", "s", "d", "i", "s", "s"};
         Object[] data = {
             this.cod_habitacion, 
-            this.numero, 
+            this.nombre, 
+            this.descripcion, 
+            this.precio, 
             this.piso, 
+            this.imagen, 
             this.observaciones
         };
         return super.insert(data, types, false);
