@@ -28,15 +28,15 @@ function showElement(el) {
 $('.edit-client').click(() => {
     let valID = $('.edit-client');
     let values = $(valID.attr("data") + ' td')
-    let tr = $(valID.attr("data"))
-    console.log(values)
-    let str = `<tr>`
+    const id = valID.attr("data").replace("#", "form-")
+    let str = `<form id="${id}" action="UpdateUser" method="POST">`
+        str += `<input type="hidden" value="${$(values[0]).html()}" name="where">`
     for(let i = 0; i < values.length - 1; i++){
         let td = $(values[i])
-        str += `<td><input class="form-control form-control-line" value="${td.html()}" name="${td.attr("field")}"/></td>`
+        str += `<input class="input-fixed form-control form-control-line" value="${td.html()}" name="${td.attr("field")}"/>`
     }
-    str += `<td><button class="btn btn-success btn-sm update-client"><i class="fa fa-check"></i></button></td>`
-    str += `</tr>`
-    tr.after(str)
-    tr.hide()
+    str += `<button onClick="$('#${id}').submit()" style="float: right;" class="btn btn-success btn-sm"><i class="fa fa-check"></i> Guardar</button>`
+    str += `</form>`
+    $('.content-edit').html(str)
+    $('.content-edit').show(500)
 })

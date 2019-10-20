@@ -110,6 +110,37 @@ public class MainModel {
         return false;
     }
     
+    public String update(Object[] data, String[] type){
+        Object [] fields = this.fields.split(",");
+        String sql = "UPDATE " + this.table + " SET ";
+        for(int i = 0; i < fields.length; i++)
+            sql += fields[i] + "=?,";
+        sql = sql.substring(0, sql.length() - 1)  + "";
+        sql += " WHERE " + this.getMainField() + " =?";
+        //return sql;
+        try {
+            PreparedStatement pst = null;
+            Conexion cn = new Conexion();
+            pst = cn.getConexion().prepareStatement(sql);
+            for(int i = 0; i < data.length; i++){
+                if(type[i] == "i")
+                    pst.setInt(i + 1, (int) data[i]);
+                else if(type[i] == "s")
+                    pst.setString(i + 1, (String) data[i]);
+                else if(type[i] == "d")
+                    pst.setDouble(i + 1, (double) data[i]);
+            }
+            if (pst.executeUpdate() == 1) {
+                return "si";
+            }
+        } catch (SQLException e) {
+            System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "no";
+    }
+    
     public ResultSet execute(String sql){
          ResultSet rs = null;
         try {

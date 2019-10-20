@@ -82,6 +82,11 @@
                 </div>
                 <div class="white-box">
                      <h3 class="box-title">Lista de clientes</h3>
+                     <div class="">
+                         <div class="content-edit">
+                             
+                         </div>
+                     </div>
                       <div class="table-responsive">
                         <table class="table">
                             <thead>

@@ -32,4 +32,19 @@ public class Cliente extends MainModel{
         };
         return super.insert(data, types, false);
     }
+    
+    public String update(Object index){
+        String[] types = {"i", "s", "s", "s", "i", "s", "s", "i"};
+        Object[] data = {
+            this.cedula, 
+            this.nombres, 
+            this.apellidos, 
+            this.direccion,
+            this.telefono,
+            this.email,
+            this.observaciones,
+            (int) index,
+        };
+        return super.update(data, types);
+    }
 }

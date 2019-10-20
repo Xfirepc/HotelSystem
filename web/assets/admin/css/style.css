@@ -8,7 +8,18 @@
     z-index: 99999;
     background: #fff
 }
-
+.content-edit{
+    padding: 10px;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    display: none;
+    margin-bottom: 10px;
+}
+.input-fixed{
+    display: inline-block;
+    width: calc(12%);;
+    margin: 0px 10px 0px 0px;
+}
 .preloader .cssload-speeding-wheel {
     position: absolute;
     top: calc(50% - 3.5px);
