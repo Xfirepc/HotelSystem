@@ -20,19 +20,55 @@
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Nueva habitación</h5>
+                                      <h5 class="modal-title" id="exampleModalLabel">Nuevo Cliente</h5>
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
-                                    <form class="form-horizontal form-material" action="NewRoom">
+                                    <form class="form-horizontal form-material" action="NewClient" method="POST">
                                     <div class="modal-body">
-                                            <div class="form-group row">
-                                                <label class="col-md-4">Código</label>
-                                                <div class="col-md-8">
-                                                    <input type="text" class="form-control form-control-line" name="codigo"> 
-                                                </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Cedula</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control form-control-line" name="cedula"> 
                                             </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Nombres</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control form-control-line" name="nombres"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Apellidos</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control form-control-line" name="apellidos"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Direccion</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control form-control-line" name="direccion"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Telefono</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control form-control-line" name="telefono"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Email</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control form-control-line" name="email"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-4">Observaciones</label>
+                                            <div class="col-md-8">
+                                                <textarea  class="form-control form-control-line" name="observaciones"></textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                       <a class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
