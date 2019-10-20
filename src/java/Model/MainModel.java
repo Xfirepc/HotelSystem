@@ -51,7 +51,7 @@ public class MainModel {
             Conexion cn = new Conexion();
             String sql = "DELETE FROM " + this.table + " WHERE " + this.getMainField() + "=?";
             pst = cn.getConexion().prepareStatement(sql);
-            if(this.type == "integer"){
+            if(this.type != "integer"){
                 pst.setString(1, (String) val);
             }else{
                 pst.setInt(1, (int) val);

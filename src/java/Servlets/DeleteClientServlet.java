@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author papiv
  */
-@WebServlet(name = "DeleteUserServlet", urlPatterns = {"/DeleteUser"})
-public class DeleteUserServlet extends HttpServlet {
+@WebServlet(name = "DeleteUserServlet", urlPatterns = {"/DeleteClient"})
+public class DeleteClientServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,9 +34,13 @@ public class DeleteUserServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        int cedula = Integer.parseInt("id");
+        Object cedula = Integer.parseInt(request.getParameter("id"));
         Cliente client = new Cliente();
-        client.delete(cedula);
+        if(client.delete(cedula)){
+            response.sendRedirect("clientes.jsp");
+        }else{
+            response.sendError(400, "bad request");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

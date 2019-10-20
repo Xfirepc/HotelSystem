@@ -112,7 +112,7 @@
                             <td><%=client.getString(7)%></td>
                             <td class="text-center">
                                 <button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
-                                <button class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></button>
+                                <a href="DeleteClient?id=<%=client.getInt(1)%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     
