@@ -110,7 +110,7 @@ public class MainModel {
         return false;
     }
     
-    public String update(Object[] data, String[] type){
+    public boolean update(Object[] data, String[] type){
         Object [] fields = this.fields.split(",");
         String sql = "UPDATE " + this.table + " SET ";
         for(int i = 0; i < fields.length; i++)
@@ -131,14 +131,14 @@ public class MainModel {
                     pst.setDouble(i + 1, (double) data[i]);
             }
             if (pst.executeUpdate() == 1) {
-                return "si";
+                return true;
             }
         } catch (SQLException e) {
             System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "no";
+        return false;
     }
     
     public ResultSet execute(String sql){

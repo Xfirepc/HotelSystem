@@ -33,18 +33,21 @@ public class UpdateUserServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter pw= response.getWriter();
-        pw.println("<html><body>"+request.getParameter("cedula")+"</body></html>");
-//        Cliente client = new Cliente();
-//        client.cedula = Integer.parseInt(request.getParameter("cedula"));
-//        client.telefono = Integer.parseInt(request.getParameter("telefono"));
-//        client.nombres = request.getParameter("nombres");
-//        client.apellidos = request.getParameter("apellidos");
-//        client.direccion = request.getParameter("direccion");
-//        client.email = request.getParameter("email");
-//        client.observaciones = request.getParameter("observaciones");
-//        
-//        response.sendRedirect("clientes.jsp?msg="+client.update(request.getParameter("where")));
+    
+        Cliente client = new Cliente();
+        client.cedula = Integer.parseInt(request.getParameter("cedula"));
+        client.telefono = Integer.parseInt(request.getParameter("telefono"));
+        client.nombres = request.getParameter("nombres");
+        client.apellidos = request.getParameter("apellidos");
+        client.direccion = request.getParameter("direccion");
+        client.email = request.getParameter("email");
+        client.observaciones = request.getParameter("observaciones");
+        int where = Integer.parseInt(request.getParameter("where"));
+        if(client.updateClient(where)){
+            response.sendRedirect("clientes.jsp");
+        }else{
+            response.sendError(400, "No se ha actualizado el Cliente")
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
