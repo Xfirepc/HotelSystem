@@ -4,7 +4,7 @@
     HttpSession getSession = (HttpSession) request.getSession();
     
     ResultSet user = (ResultSet) getSession.getAttribute("user");
-    if(!user.first()){
+    if(user.wasNull()){
         response.sendRedirect("index.jsp");
     }
 %>
