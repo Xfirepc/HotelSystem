@@ -46,7 +46,7 @@ public class UpdateUserServlet extends HttpServlet {
         if(client.updateClient(where)){
             response.sendRedirect("clientes.jsp");
         }else{
-            response.sendError(400, "No se ha actualizado el Cliente")
+            response.sendError(400, "No se ha actualizado el Cliente");
         }
     }
 

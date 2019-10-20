@@ -116,7 +116,7 @@
                             <td field="email"><%=client.getString(6)%></td>
                             <td field="observaciones"><%=client.getString(7)%></td>
                             <td class="text-center">
-                                <button class="btn btn-info btn-sm edit-client" data="#client-<%=client.getInt(1)%>"><i class="fa fa-eye"></i></button>
+                                <button class="btn btn-info btn-sm" onClick="showForm('#client-<%=client.getInt(1)%>')" data="#client-<%=client.getInt(1)%>"><i class="fa fa-eye"></i></button>
                                 <a href="DeleteClient?id=<%=client.getInt(1)%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>

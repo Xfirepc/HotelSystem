@@ -25,10 +25,9 @@ function showElement(el) {
 }
 
 
-$('.edit-client').click(() => {
-    let valID = $('.edit-client');
-    let values = $(valID.attr("data") + ' td')
-    const id = valID.attr("data").replace("#", "form-")
+function showForm(formId){
+    let values = $(formId + ' td')
+    const id = formId.replace("#", "form-")
     let str = `<form id="${id}" action="UpdateUser" method="POST">`
         str += `<input type="hidden" value="${$(values[0]).html()}" name="where">`
     for(let i = 0; i < values.length - 1; i++){
@@ -39,4 +38,4 @@ $('.edit-client').click(() => {
     str += `</form>`
     $('.content-edit').html(str)
     $('.content-edit').show(500)
-})
+}
