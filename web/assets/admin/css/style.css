@@ -29,7 +29,9 @@
 * {
     outline: 0!important
 }
-
+.circle{
+    border-radius: 50%;
+}
 body {
     background: #2f323e;
     font-family: Rubik, sans-serif;

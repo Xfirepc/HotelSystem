@@ -97,7 +97,7 @@
                                     <th>Direccion</th>
                                     <th>Telefono</th>
                                     <th>Email</th>
-                                    <th>Obs</th>
+                                    <th>Observaciones</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

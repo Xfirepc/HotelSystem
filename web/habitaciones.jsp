@@ -18,7 +18,7 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
                             class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newHab">Nueva Habitación</a>
-                            <div class="modal fade" id="newHab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="newHab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -97,7 +97,7 @@
                                 <div class="user-bg"> <img width="100%" alt="user" src="<%=result.getString("imagen")%>">
                                     <div class="overlay-box">
                                         <div class="user-content">
-                                            <a href="javascript:void(0)"><img src="<%=result.getString("imagen")%>"
+                                            <a href="javascript:void(0)"><img style="border-radius: 50%;" src="<%=result.getString("imagen")%>"
                                                     class="thumb-lg img-circle" alt="img"></a>
                                             <h3 class="text-white"><%=result.getString("nombre")%> - Piso: <%=result.getInt("piso")%></h3>
                                             <h4 class="text-white">Precio: $<%=result.getDouble("precio")%></h4>

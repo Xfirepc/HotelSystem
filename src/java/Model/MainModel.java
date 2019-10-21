@@ -29,11 +29,13 @@ public class MainModel {
         return rs;
     }
     
-     public ResultSet getOne(String val) {
+     public ResultSet getOne(Object val, String type) {
         ResultSet rs = null;
         try {
             Conexion cn = new Conexion();
             String sql = "SELECT * FROM " + this.table  + " WHERE " + this.getMainField() + " = '" + val + "'";
+            if(type == "integer")
+                sql = "SELECT * FROM " + this.table  + " WHERE " + this.getMainField() + " = " + val;
             Statement st = cn.getConexion().createStatement();
             rs = st.executeQuery(sql);
             cn.getConexion().close();
