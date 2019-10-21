@@ -55,8 +55,10 @@
                         while(reservaciones.next()){
                     %>
                         <div class="col-sm-4">
-                            <div class="card border-dark mb-3">
-                                <div class="card-header">Reservacion #<%=reservaciones.getInt("no_reservacion")%></div>
+                            <div class="card border-warning mb-3">
+                                <div class="card-header">Reservacion #<%=reservaciones.getInt("no_reservacion")%>
+                                    <a href="DeleteReservation?index=<%=reservaciones.getInt("no_reservacion")%>" class="btn btn-warning btn-sm text-white" style="float: right;"><i class="fa fa-trash"></i></a>
+                                </div>
                                 <div class="card-body">
                                     <h4 class="card-title"><b>Cliente:</b> <%=res.getDataUser(reservaciones.getInt("cliente"))%></h4>
                                   <p class="card-text">
