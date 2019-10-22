@@ -25,7 +25,6 @@ public class Reservacion extends MainModel {
     }
 
     public boolean create() {
-        // Types are defined by s: String, i: int, d: Date
         String[] types = {"s", "s", "i", "d", "d", "d", "s", "s", "i", "i"};
         Object[] data = {
             this.fecha_inicial, 

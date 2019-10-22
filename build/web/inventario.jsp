@@ -11,7 +11,7 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">CLIENTES</h4>
+                        <h4 class="page-title">INVENTARIO</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
@@ -20,53 +20,47 @@
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Nuevo Cliente</h5>
+                                      <h5 class="modal-title" id="exampleModalLabel">Nuevo Articulo</h5>
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
-                                    <form class="form-horizontal form-material" action="NewClient" method="POST">
+                                    <form class="form-horizontal form-material" action="NewArtInventario" method="POST">
                                     <div class="modal-body">
                                         <div class="form-group row">
-                                            <label class="col-md-4">Cedula</label>
+                                            <label class="col-md-4">Codigo</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="cedula"> 
+                                                <input type="text" class="form-control form-control-line" name="codigo"> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-4">Nombres</label>
+                                            <label class="col-md-4">Nombre</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="nombres"> 
+                                                <input type="text" class="form-control form-control-line" name="nombre"> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-4">Apellidos</label>
+                                            <label class="col-md-4">Descripcion</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="apellidos"> 
+                                                <input type="text" class="form-control form-control-line" name="descripcion"> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-4">Direccion</label>
+                                            <label class="col-md-4">Habitacion</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="direccion"> 
+                                                <input type="text" class="form-control form-control-line" name="habitacion"> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-4">Telefono</label>
+                                            <label class="col-md-4">Usuario</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="telefono"> 
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-4">Email</label>
-                                            <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="email"> 
+                                                <input type="text" class="form-control form-control-line" name="usuario"> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-md-4">Observaciones</label>
                                             <div class="col-md-8">
-                                                <textarea  class="form-control form-control-line" name="observaciones"></textarea>
+                                                <input type="text" class="form-control form-control-line" name="observaciones"> 
                                             </div>
                                         </div>
                                     </div>
@@ -81,7 +75,7 @@
                     </div>
                 </div>
                 <div class="white-box">
-                     <h3 class="box-title">Lista de clientes</h3>
+                     <h3 class="box-title">Lista de Articulos en el Hotel</h3>
                      <div class="">
                          <div class="content-edit">
                              
@@ -91,12 +85,11 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Nombres</th>
-                                    <th>Apellidos</th>
-                                    <th>Direccion</th>
-                                    <th>Telefono</th>
-                                    <th>Email</th>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th>Habitacion</th>
+                                    <th>Usuario</th>
                                     <th>Observaciones</th>
                                     <th>Action</th>
                                 </tr>
