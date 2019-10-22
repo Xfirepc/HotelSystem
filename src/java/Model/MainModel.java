@@ -144,7 +144,7 @@ public class MainModel {
     }
     
     public ResultSet execute(String sql){
-         ResultSet rs = null;
+        ResultSet rs = null;
         try {
             Conexion cn = new Conexion();
             Statement st = cn.getConexion().createStatement();

@@ -1,5 +1,10 @@
 package Model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Habitacion extends MainModel {
     
     public String cod_habitacion;
@@ -9,6 +14,11 @@ public class Habitacion extends MainModel {
     public String observaciones;
     public double precio;
     public int piso;
+    public int estado;
+    
+    public int status_free = 0;
+    public int status_busy = 1;
+    public int status_noservice = 2;
     
     public Habitacion() {
         super();
@@ -34,5 +44,18 @@ public class Habitacion extends MainModel {
     
     public double priceByDay(double precio, int dias, double extras){
         return (double) (precio * dias + extras);
+    }
+    
+    public boolean setState(int status){
+        try {
+            String sql = "UPDATE " + this.table + " SET estado=" + status + " WHERE cod_habitacion=" + this.cod_habitacion;
+            ResultSet res = super.execute(sql);
+            if(res.next()){
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Habitacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 }
