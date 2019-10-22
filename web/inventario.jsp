@@ -1,3 +1,4 @@
+<%@page import="Model.Inventario"%>
 <%@page import="Model.Habitacion"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="Model.Cliente"%>
@@ -14,9 +15,8 @@
                         <h4 class="page-title">INVENTARIO</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
-                            class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newHab">Nuevo Cliente</a>
-                            <div class="modal fade" id="newHab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <a class="text-white btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newArticle">Nuevo Articulo</a>
+                            <div class="modal fade" id="newArticle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -25,7 +25,7 @@
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
-                                    <form class="form-horizontal form-material" action="NewArtInventario" method="POST">
+                                    <form class="form-horizontal form-material" action="NewArticle" method="POST">
                                     <div class="modal-body">
                                         <div class="form-group row">
                                             <label class="col-md-4">Codigo</label>
@@ -48,15 +48,21 @@
                                         <div class="form-group row">
                                             <label class="col-md-4">Habitacion</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="habitacion"> 
-                                            </div>
+                                                <select class="form-control form-control-line" name="habitacion">
+                                                    <%
+                                                        Habitacion hab = new Habitacion();
+                                                        ResultSet h = hab.get();
+                                                        while(h.next()){
+                                                    %>
+                                                        <option value="<%=h.getString("cod_habitacion")%>">
+                                                            <%=h.getString("cod_habitacion")%> - <%=h.getString("nombre")%>
+                                                        </option>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </select>                                            </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-4">Usuario</label>
-                                            <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="usuario"> 
-                                            </div>
-                                        </div>
+                                        <input type="hidden" name="usuario" value="<%=user != null ? user.getInt("id"): "0"%>">
                                         <div class="form-group row">
                                             <label class="col-md-4">Observaciones</label>
                                             <div class="col-md-8">
@@ -95,28 +101,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                    <%
-                        Cliente cli = new Cliente();
-                        ResultSet client = cli.get();
-                        while(client.next()){
-                    %>
-                        <tr id="client-<%=client.getInt(1)%>">
-                            <td field="cedula"><%=client.getInt(1)%></td>
-                            <td field="nombres"><%=client.getString(2)%></td>
-                            <td field="apellidos"><%=client.getString(3)%></td>
-                            <td field="direccion"><%=client.getString(4)%></td>
-                            <td field="telefono"><%=client.getInt(5)%></td>
-                            <td field="email"><%=client.getString(6)%></td>
-                            <td field="observaciones"><%=client.getString(7)%></td>
+
+                        <tr id="invent-">
+                            <td field="cedula"></td>
                             <td class="text-center">
-                                <button class="btn btn-info btn-sm" onClick="showForm('#client-<%=client.getInt(1)%>')" data="#client-<%=client.getInt(1)%>"><i class="fa fa-eye"></i></button>
-                                <a href="DeleteClient?id=<%=client.getInt(1)%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>
+                                <button class="btn btn-info btn-sm" onClick="showForm('#client-')" data="#client-"><i class="fa fa-eye"></i></button>
+                                <a href="DeleteClient?id=%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     
-                    <%
-                        }
-                    %>
                             </tbody>
                         </table>
                     </div>

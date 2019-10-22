@@ -27,5 +27,5 @@ public class Inventario extends MainModel{
             this.observaciones
         };
         return super.insert(data, types, false);
-    
+     }
 }
