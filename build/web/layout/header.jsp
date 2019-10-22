@@ -65,7 +65,7 @@
                             class="hide-menu">Navigation</span></h3>
                 </div>
                 <ul class="nav" id="side-menu">
-                    <li style="padding: 70px 0 0;">
+                    <li style="padding: 100px 0 0;">
                         <a href="habitaciones.jsp" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                 aria-hidden="true"></i>Habitaciones</a>
                     </li>
@@ -81,10 +81,10 @@
                         <a href="inventario.jsp" class="waves-effect"><i class="fa fa-font fa-fw"
                                 aria-hidden="true"></i>Inventario</a>
                     </li>
-                    <li>
+<!--                    <li>
                         <a href="usuarios.jsp" class="waves-effect"><i class="fa fa-globe fa-fw"
                                 aria-hidden="true"></i>Usuarios</a>
-                    </li>
+                    </li>-->
                 </ul>
                 <div class="center p-20">
                     <a href="Logout"

@@ -41,7 +41,7 @@ public class Reservacion extends MainModel {
         if(this.dias <= 1){
             Habitacion hab = new Habitacion();
             hab.cod_habitacion = this.habitacion;
-            System.out.print(hab.setState(hab.status_busy));
+            hab.setState(hab.status_busy);
         }
         return super.insert(data, types, true);
     }
@@ -51,5 +51,11 @@ public class Reservacion extends MainModel {
         if(res.next())
             return res.getString("nombres") + " " + res.getString("apellidos");
         return "Desconocido";
+    }
+    public boolean delete(Object val){
+        Habitacion hab = new Habitacion();
+        hab.cod_habitacion = this.habitacion;
+        hab.setState(hab.status_free);
+        return super.delete(val);
     }
 }
