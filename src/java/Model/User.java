@@ -27,6 +27,6 @@ public class User extends MainModel{
     }
     public ResultSet getLoginData(String email, String pass){
         String sql = "SELECT * FROM " + this.table + " WHERE email = '"+ email +"' AND " + "'" + pass + "'";
-        return super.execute(sql);
+        return super.executeGet(sql);
     }
 }

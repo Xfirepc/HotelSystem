@@ -38,6 +38,11 @@ public class Reservacion extends MainModel {
             this.cliente,
             this.usuario
         };
+        if(this.dias <= 1){
+            Habitacion hab = new Habitacion();
+            hab.cod_habitacion = this.habitacion;
+            System.out.print(hab.setState(hab.status_busy));
+        }
         return super.insert(data, types, true);
     }
     public String getUserName(Object index) throws SQLException{

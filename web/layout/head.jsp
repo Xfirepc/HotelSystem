@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/admin/images/favicon.png">
-    <title>Ample Admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Sistema de Reservaciones</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/admin/css/animate.css" rel="stylesheet">
     <link href="assets/admin/css/style.css" rel="stylesheet">

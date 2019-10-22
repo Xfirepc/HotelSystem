@@ -106,7 +106,17 @@
                                 </div>
                                 <div class="user-btm-box">
                                     <b>Descripcion:</b> <%=result.getString("descripcion")%> <br>
-                                    <b>Observaciones:</b> <%=result.getString("observaciones")%>
+                                    <b>Observaciones:</b> <%=result.getString("observaciones")%><br>
+                                    <b>Estado:</b>
+                                      <% 
+                                          int status = result.getInt("estado");
+                                      %>
+                                      <% if(status == 0) {%>
+                                        <span class="badge badge-success">Disponible</span><%}%>
+                                      <% if(status == 1) {%>
+                                        <span class="badge badge-danger">Ocupada</span><%}%>
+                                      <% if(status == 2) {%>
+                                        <span class="badge badge-warning">Sin Servicio</span><%}%>
                                 </div>
                             </div>
                         </div>

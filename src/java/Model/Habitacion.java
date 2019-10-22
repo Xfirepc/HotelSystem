@@ -47,15 +47,8 @@ public class Habitacion extends MainModel {
     }
     
     public boolean setState(int status){
-        try {
-            String sql = "UPDATE " + this.table + " SET estado=" + status + " WHERE cod_habitacion=" + this.cod_habitacion;
-            ResultSet res = super.execute(sql);
-            if(res.next()){
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Habitacion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
+        String sql = "UPDATE " + this.table + " SET estado=" + status + " WHERE cod_habitacion='" + this.cod_habitacion +"'";
+        boolean res = super.executeUpdate(sql);
+        return res;
     }
 }

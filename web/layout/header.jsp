@@ -45,11 +45,6 @@
                             href="javascript:void(0)"><i class="fa fa-bars"></i></a>
                     </li>
                     <li>
-                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
-                            <input type="text" placeholder="Search..." class="form-control"> <a href=""><i
-                                    class="fa fa-search"></i></a> </form>
-                    </li>
-                    <li>
                         <a class="profile-pic" href="#"> <img src="https://www.shareicon.net/data/2016/09/01/822711_user_512x512.png" alt="user-img"
                                 width="36" class="img-circle"><b class="hidden-xs">Hola, <%=user != null ? user.getString("name"): ""%></b></a>
                     </li>

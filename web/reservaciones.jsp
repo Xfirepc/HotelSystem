@@ -132,6 +132,7 @@
                                       + extras: $<%=reservaciones.getDouble("extras")%><br>
                                       <b>Habitacion: </b><%=reservaciones.getString("habitacion")%><br>
                                   </p>
+                                  
                                 </div>
                             </div>
                         </div>
