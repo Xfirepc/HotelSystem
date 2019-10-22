@@ -115,7 +115,7 @@
                                     <td field="usuario"><%=i.getInt("usuario")%></td>
                                     <td field="observaciones"><%=i.getString("observaciones")%></td>
                                     <td class="text-center">
-                                        <button class="btn btn-info btn-sm" onClick="showForm('#invent-<%=i.getString("codigo")%>')" data="#invent-<%=i.getString("codigo")%>">
+                                        <button class="btn btn-info btn-sm" onClick="showForm('#invent-<%=i.getString("codigo")%>', 'UpdateInventario')" data="#invent-<%=i.getString("codigo")%>">
                                             <i class="fa fa-eye"></i>
                                         </button>
                                         <a href="DeleteItem?codigo=<%=i.getString("codigo")%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>

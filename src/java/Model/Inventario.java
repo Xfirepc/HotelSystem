@@ -28,4 +28,18 @@ public class Inventario extends MainModel{
         };
         return super.insert(data, types, false);
      }
+     
+     public boolean updateInventario(String index){
+        String[] types = {"s", "s", "s", "s", "i", "s", "s"};
+        Object[] data = {
+            this.codigo, 
+            this.nombre, 
+            this.descripcion,
+            this.habitacion,
+            this.usuario,
+            this.observaciones,
+            index
+        };
+        return super.update(data, types);
+    }
 }
