@@ -197,7 +197,7 @@ public final class habitaciones_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                    <div class=\"col-lg-9 col-sm-8 col-md-8 col-xs-12\">\n");
       out.write("                        <a href=\"https://wrappixel.com/templates/ampleadmin/\" target=\"_blank\"\n");
       out.write("                            class=\"btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light\" data-toggle=\"modal\" data-target=\"#newHab\">Nueva Habitación</a>\n");
-      out.write("                            <div class=\"modal fade\" id=\"newHab\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n");
+      out.write("                                <div class=\"modal fade\" id=\"newHab\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n");
       out.write("                                <div class=\"modal-dialog\" role=\"document\">\n");
       out.write("                                  <div class=\"modal-content\">\n");
       out.write("                                    <div class=\"modal-header\">\n");

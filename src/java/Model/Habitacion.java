@@ -31,4 +31,8 @@ public class Habitacion extends MainModel {
         };
         return super.insert(data, types, false);
     }
+    
+    public double priceByDay(double precio, int dias, double extras){
+        return (double) (precio * dias + extras);
+    }
 }

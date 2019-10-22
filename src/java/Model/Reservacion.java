@@ -41,25 +41,11 @@ public class Reservacion extends MainModel {
         };
         return super.insert(data, types, true);
     }
-    public String getDataUser(Object index) throws SQLException{
+    public String getUserName(Object index) throws SQLException{
         Cliente client = new Cliente();
         ResultSet res = client.getOne(index, "integer");
         if(res.next())
             return res.getString("nombres") + " " + res.getString("apellidos");
         return "Desconocido";
     }
-//    public boolean updateClient(int index){
-//        String[] types = {"i", "s", "s", "s", "i", "s", "s", "i"};
-//        Object[] data = {
-//            this.cedula, 
-//            this.nombres, 
-//            this.apellidos, 
-//            this.direccion,
-//            this.telefono,
-//            this.email,
-//            this.observaciones,
-//            index,
-//        };
-//        return super.update(data, types);
-//    }
 }
