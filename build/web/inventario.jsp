@@ -101,15 +101,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                        <tr id="invent-">
-                            <td field="cedula"></td>
-                            <td class="text-center">
-                                <button class="btn btn-info btn-sm" onClick="showForm('#client-')" data="#client-"><i class="fa fa-eye"></i></button>
-                                <a href="DeleteClient?id=%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    
+                            <%
+                                Inventario invent = new Inventario();
+                                ResultSet i = invent.get();
+                                while(i.next()){
+                            %>        
+                            
+                                <tr id="invent-<%=i.getString("codigo")%>">
+                                    <td field="codigo"><%=i.getString("codigo")%></td>
+                                    <td field="nombre"><%=i.getString("nombre")%></td>
+                                    <td field="descripcion"><%=i.getString("descripcion")%></td>
+                                    <td field="habitacion"><%=i.getString("habitacion")%></td>
+                                    <td field="usuario"><%=i.getInt("usuario")%></td>
+                                    <td field="observaciones"><%=i.getString("observaciones")%></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-info btn-sm" onClick="showForm('#invent-<%=i.getString("codigo")%>')" data="#invent-<%=i.getString("codigo")%>">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                        <a href="DeleteItem?codigo=<%=i.getString("codigo")%>" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                        <%
+                            }
+                        %>
                             </tbody>
                         </table>
                     </div>
