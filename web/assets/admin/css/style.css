@@ -32,6 +32,11 @@
 .circle{
     border-radius: 50%;
 }
+.free-hab{
+    position: abosulte;
+    right: 10;
+   text-align: right;
+}
 body {
     background: #2f323e;
     font-family: Rubik, sans-serif;

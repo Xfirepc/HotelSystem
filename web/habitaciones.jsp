@@ -99,7 +99,8 @@
                                         <div class="user-content">
                                             <a href="javascript:void(0)"><img style="border-radius: 50%;" src="<%=result.getString("imagen")%>"
                                                     class="thumb-lg img-circle" alt="img"></a>
-                                            <h3 class="text-white"><%=result.getString("nombre")%> - Piso: <%=result.getInt("piso")%></h3>
+                                            <h3 class="text-white">
+                                                <%=result.getString("cod_habitacion")%> - <%=result.getString("nombre")%> - Piso: <%=result.getInt("piso")%></h3>
                                             <h4 class="text-white">Precio: $<%=result.getDouble("precio")%></h4>
                                         </div>
                                     </div>
@@ -117,6 +118,12 @@
                                         <span class="badge badge-danger">Ocupada</span><%}%>
                                       <% if(status == 2) {%>
                                         <span class="badge badge-warning">Sin Servicio</span><%}%>
+                                        
+                                        <div class="free-hab">
+                                            <a href="UpdateStatusHab?cod=<%=result.getString("cod_habitacion")%>&status=0"  >
+                                               <small class="text-danger"><b>Desocupar</b></small>
+                                            </a>
+                                        </div>
                                 </div>
                             </div>
                         </div>

@@ -2,6 +2,8 @@ package Model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Reservacion extends MainModel {
     
@@ -38,7 +40,10 @@ public class Reservacion extends MainModel {
             this.cliente,
             this.usuario
         };
-        if(this.dias <= 1){
+        int dias_disponibles = Integer.parseInt(this.fecha_final.split("-")[2]);
+        int dia_actual = Integer.parseInt(this.getDateNow().split("-")[2]);
+        // Capture days by date now and end date of the reservation to set busy state
+        if(this.dias <= 1 && dias_disponibles - dia_actual <= 1){
             Habitacion hab = new Habitacion();
             hab.cod_habitacion = this.habitacion;
             hab.setState(hab.status_busy);
@@ -57,5 +62,10 @@ public class Reservacion extends MainModel {
         hab.cod_habitacion = this.habitacion;
         hab.setState(hab.status_free);
         return super.delete(val);
+    }
+    public String getDateNow() {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(cal.getTime());
     }
 }
