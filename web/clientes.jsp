@@ -10,10 +10,10 @@
             
             <div class="container-fluid">
                 <div class="row bg-title">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                     <div class="col-xs-6 col-sm-6">
                         <h4 class="page-title">CLIENTES</h4>
                     </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                     <div class="col-xs-6 col-sm-6">
                         <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
                             class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newHab">Nuevo Cliente</a>
                             <div class="modal fade" id="newHab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

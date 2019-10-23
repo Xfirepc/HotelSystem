@@ -11,10 +11,11 @@
             
             <div class="container-fluid">
                 <div class="row bg-title">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                     <div class="col-xs-6 col-sm-6">
                         <h4 class="page-title">INVENTARIO</h4>
-                    </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                     </div>
+                     
+                    <div class="col-xs-6 col-sm-6">
                         <a class="text-white btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newArticle">Nuevo Articulo</a>
                             <div class="modal fade" id="newArticle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">

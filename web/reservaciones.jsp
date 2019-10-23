@@ -11,10 +11,10 @@
             
             <div class="container-fluid">
                 <div class="row bg-title">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                     <div class="col-xs-6 col-sm-6">
                         <h4 class="page-title">Reservaciones</h4>
                     </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                     <div class="col-xs-6 col-sm-6">
                         <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
                             class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light" data-toggle="modal" data-target="#newRes">Nueva Reservacion</a>
                             <div class="modal fade" id="newRes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -31,7 +31,7 @@
                                         <div class="form-group row">
                                             <label class="col-md-4">Habitacion: </label>
                                             <div class="col-md-8">
-                                                <select class="form-control form-control-line" name="habitacion">
+                                                <select class="form-control form-control-line" name="habitacion" required>
                                                     <%
                                                         Habitacion hab = new Habitacion();
                                                         ResultSet h = hab.get();
@@ -49,7 +49,7 @@
                                         <div class="form-group row">
                                             <label class="col-md-4">Cliente: </label>
                                             <div class="col-md-8">
-                                                <select class="form-control form-control-line" name="cliente">
+                                                <select class="form-control form-control-line" name="cliente" required>
                                                     <%
                                                         Cliente client = new Cliente();
                                                         ResultSet c = client.get();
@@ -67,25 +67,25 @@
                                         <div class="form-group row">
                                             <label class="col-md-4">Fecha inicial: </label>
                                             <div class="col-md-8">
-                                                <input type="date" class="form-control form-control-line" name="fecha_inicial"> 
+                                                <input type="date" class="form-control form-control-line" name="fecha_inicial" required> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-md-4">Fecha final: </label>
                                             <div class="col-md-8">
-                                                <input type="date" class="form-control form-control-line" name="fecha_final"> 
+                                                <input type="date" class="form-control form-control-line" name="fecha_final" required> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-md-4">Abonado</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="abonado"> 
+                                                <input type="text" class="form-control form-control-line" name="abonado" required> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-md-4">Extras</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="extras"> 
+                                                <input type="text" class="form-control form-control-line" name="extras" value="0" required> 
                                                 <input type="hidden" name="usuario" value="<%=user != null ? user.getInt("id"): "0"%>"> 
                                             </div>
                                         </div>

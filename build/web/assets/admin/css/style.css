@@ -32,6 +32,9 @@
 .col-xs-6{
     width: 50%;
 }
+.navbar{
+    z-index: 1000;
+}
 .circle{
     border-radius: 50%;
 }
