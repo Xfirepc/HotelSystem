@@ -29,6 +29,9 @@
 * {
     outline: 0!important
 }
+.col-xs-6{
+    width: 50%;
+}
 .circle{
     border-radius: 50%;
 }
