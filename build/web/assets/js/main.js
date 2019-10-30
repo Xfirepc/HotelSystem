@@ -21,6 +21,8 @@ $('.btn-register').click(() => {
 
 function showElement(el) {
     el.removeClass('hide')
+    $('.btn-login').hide()
+    $('.btn-register').show()
     el.show()
 }
 

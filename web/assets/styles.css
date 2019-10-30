@@ -32,7 +32,13 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+.btn-register{
+    display: none;
+}
+.text-register{
+    text-decoration: underline;
+    cursor: pointer;
+}
 .loader {
   padding: .5em;
   width: 5.5em;

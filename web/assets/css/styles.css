@@ -32,6 +32,16 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.btn-register{
+    display: none;
+}
+.text-register{
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+.text-register:hover{
+    color: #00AEEF !important;
+}
 
 .loader {
   padding: .5em;

@@ -78,10 +78,10 @@
                     <div class="form-group">
                       <label for="InputPassword1">Password</label>
                       <input type="password" class="form-control" id="InputPassword1" name="pass" placeholder="******">
-                      <small id="emailHelp" class="form-text text-muted">Si no tienes cuenta registrate</small>
+                      <a class="form-text text-register text-muted btn-register">Si no tienes cuenta registrate haciendo click aqui!</a>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
-                    <a class="btn btn-primary btn-register text-white">Registrarse</a>
+                    <button type="submit" class="btn btn-primary btn-login">Ingresar</button>
+                    <a class="btn btn-primary btn-register text-white" style="display:none;">Registrarse</a>
                   </form>
                   <br/>
                
