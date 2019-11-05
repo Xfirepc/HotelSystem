@@ -21,7 +21,7 @@
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Reservacion</h5>
+                                      <h5 class="modal-title" id="exampleModalLabel">Reservación</h5>
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                       </button>
@@ -31,13 +31,16 @@
                                         <div class="form-group row">
                                             <label class="col-md-4">Habitacion: </label>
                                             <div class="col-md-8">
-                                                <select class="form-control form-control-line" name="habitacion" required>
+                                                <select class="form-control form-control-line select-hotel" name="habitacion" required onChange="handlePrice()">
+                                                    <option disabled selected>
+                                                        Selecciona una opción...
+                                                    </option>
                                                     <%
                                                         Habitacion hab = new Habitacion();
                                                         ResultSet h = hab.get();
                                                         while(h.next()){
                                                     %>
-                                                        <option value="<%=h.getString("cod_habitacion")%>">
+                                                        <option value="<%=h.getString("cod_habitacion")%>" id="<%=h.getString("cod_habitacion")%>" data-price="<%=h.getString("precio")%>">
                                                             <%=h.getString("cod_habitacion")%> - <%=h.getString("nombre")%>
                                                         </option>
                                                     <%
@@ -67,19 +70,20 @@
                                         <div class="form-group row">
                                             <label class="col-md-4">Fecha inicial: </label>
                                             <div class="col-md-8">
-                                                <input type="date" class="form-control form-control-line" name="fecha_inicial" required> 
+                                                <input type="date" class="form-control form-control-line f-inicial" name="fecha_inicial" required> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-md-4">Fecha final: </label>
                                             <div class="col-md-8">
-                                                <input type="date" class="form-control form-control-line" name="fecha_final" required> 
+                                                <input type="date" class="form-control form-control-line f-final" name="fecha_final" required> 
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-md-4">Abonado</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control form-control-line" name="abonado" required> 
+                                                <input type="text" class="form-control form-control-line val-abonado" name="abonado" required autocomplete="off"> 
+                                                <small class="days-price text-success"></small>
                                             </div>
                                         </div>
                                         <div class="form-group row">

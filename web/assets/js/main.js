@@ -26,6 +26,25 @@ function showElement(el) {
     el.show()
 }
 
+var price = 0;
+function handlePrice () {
+    let code = $('.select-hotel').val()
+    price = parseFloat($('#'+code).attr('data-price'))
+}
+
+
+$('.val-abonado').on('input', () => {
+    let final = parseInt($('.f-final').val().split('-')[2])
+    let inicial = parseInt($('.f-inicial').val().split('-')[2])
+    let dias = final - inicial
+    $('.days-price').html('El precio total por los dias es: $' + (price*dias).toFixed(2))
+    let input = parseFloat($('.val-abonado').val());
+    if(input > price*dias){
+        alert('No puede abonar mas del precio por dias...')
+        $('.val-abonado').val("")
+    }
+})
+
 
 function showForm(formId, action = 'UpdateUser'){
     let values = $(formId + ' td')
